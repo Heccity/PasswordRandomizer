@@ -4,5 +4,20 @@ let characters = ["@", "#", "$", "%", "&", "*", "(", ")", "!", "^", "<", ">", "?
        "U", "V", "W", "X", "Y", "Z"];
 
 let passwordLength = 15;
+let passWord1 = document.getElementById("passWord1");
+let passWord2 = document.getElementById("passWord2");
 
+function generatePasswords(){
+     let password = "";
+     for(let i = 0; i < passwordLength; i++){
+          let random = Math.floor(Math.random() *  characters.length);
+          password += characters[random];
+     }
+     return password;
+}
+
+function getPassword() {
+     passWord1.textContent = generatePasswords();
+     passWord2.textContent = generatePasswords();
+   }
 
